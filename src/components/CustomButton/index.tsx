@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 
 interface props {
   title?: string;
+  testID?: string;
   onPress?: () => void;
 }
 
@@ -20,9 +21,13 @@ const ButtonTitle = styled.Text({
   alignSelf: 'center',
 });
 
-export const CustomButton: FunctionComponent<props> = ({title, onPress}) => {
+export const CustomButton: FunctionComponent<props> = ({
+  title,
+  onPress,
+  testID,
+}) => {
   return (
-    <Container>
+    <Container testID={testID}>
       <ButtonTitle onPress={onPress}>{title}</ButtonTitle>
     </Container>
   );
