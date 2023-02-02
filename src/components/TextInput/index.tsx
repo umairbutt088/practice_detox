@@ -2,7 +2,8 @@ import React, {FunctionComponent} from 'react';
 import styled from 'styled-components/native';
 
 interface props {
-  onChangeText?: string;
+  onChangeText?: (text: string) => void;
+  testID?: string;
 }
 
 const Container = styled.View({
@@ -21,10 +22,13 @@ const Input = styled.TextInput({
   fontColor: 'black',
 });
 
-export const CustomTextInput: FunctionComponent<props> = ({onChangeText}) => {
+export const CustomTextInput: FunctionComponent<props> = ({
+  onChangeText,
+  testID,
+}) => {
   return (
     <Container>
-      <Input onChangeText={onChangeText} />
+      <Input onChangeText={onChangeText} testID={testID} />
     </Container>
   );
 };
